@@ -46,14 +46,17 @@ func filter(f string) []item {
 		panic(err)
 	}
 
-	var filtered []item
-	for _, p := range projects {
-		cmpString := fmt.Sprintf("%s %s", p.Name, p.ProjectID)
-		if strings.Contains(cmpString, f) {
-			filtered = append(filtered, p)
+	for _, arg := range strings.Split(f, " ") {
+		var filtered []item
+		for _, p := range projects {
+			cmpString := fmt.Sprintf("%s %s", p.Name, p.ProjectID)
+			if strings.Contains(cmpString, arg) {
+				filtered = append(filtered, p)
+			}
 		}
+		projects = filtered
 	}
-	return filtered
+	return projects
 }
 
 func refresh() error {
