@@ -1,1 +1,1 @@
-#GCloud Butler for Alfred
+# Google Cloud Platform shortcuts for Alfred

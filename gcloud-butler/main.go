@@ -1,55 +1,31 @@
 package main
 
 import (
+	"bytes"
 	"context"
-	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 	"os"
-	"path/filepath"
 	"strings"
 
-	"github.com/pkg/errors"
-	"golang.org/x/oauth2/google"
-	cloudresourcemanager "google.golang.org/api/cloudresourcemanager/v1"
-)
+	"github.com/jarlefosen/alfred-gcloud-shortcuts/gcloud-butler/alfred"
 
-const (
-	// ScopeListProjects is a scope for listing google cloud projects
-	ScopeListProjects = "https://www.googleapis.com/auth/cloudplatformprojects.readonly"
+	"github.com/jarlefosen/alfred-gcloud-shortcuts/gcloud-butler/filehelp"
+	goog "github.com/jarlefosen/alfred-gcloud-shortcuts/gcloud-butler/google"
 )
 
 var (
-	projectsCacheFile = ".gcloud-projects"
-	butlerlog         = ".butlerlog"
+	butlerlog       = ".butlerlog"
+	gcloudCacheFile = ".gcloud-projects"
 )
 
-type items struct {
-	Items []item `xml:"item"`
-}
-
-type item struct {
-	Name      string `json:"name" xml:"title"`
-	ProjectID string `json:"project_id" xml:"arg"`
-}
-
-func filter(f string) []item {
-	data, err := readFile(projectsCacheFile)
-	if err != nil {
-		panic(err)
-	}
-
-	var projects []item
-	err = json.Unmarshal(data, &projects)
-	if err != nil {
-		panic(err)
-	}
-
-	for _, arg := range strings.Split(f, " ") {
-		var filtered []item
+func filter(projects []goog.Project, filterArgs []string) []goog.Project {
+	for _, arg := range filterArgs {
+		var filtered []goog.Project
+		arg = strings.ToLower(arg)
 		for _, p := range projects {
-			cmpString := fmt.Sprintf("%s %s", p.Name, p.ProjectID)
+			cmpString := strings.ToLower(fmt.Sprintf("%s %s", p.Name, p.ProjectID))
 			if strings.Contains(cmpString, arg) {
 				filtered = append(filtered, p)
 			}
@@ -61,96 +37,30 @@ func filter(f string) []item {
 
 func refresh() error {
 	ctx := context.Background()
-	c, err := google.DefaultClient(ctx, ScopeListProjects)
-	if err != nil {
-		return errors.Wrapf(err, "could not create default google client")
-	}
-	s, err := cloudresourcemanager.New(c)
-	if err != nil {
-		return errors.Wrapf(err, "failed to create cloudresourcemanager")
-	}
-	res, err := s.Projects.List().Do()
-	if err != nil {
-		return errors.Wrapf(err, "failed to list google cloud projects")
-	}
-
-	var projects []item
-	for _, project := range res.Projects {
-		p := item{
-			Name:      project.Name,
-			ProjectID: project.ProjectId,
-		}
-		projects = append(projects, p)
-	}
-
-	f, err := openAbsoluteFile(projectsCacheFile, true)
-	if err != nil {
-		panic(errors.Wrapf(err, "failed to open gcloud file cache"))
-	}
-
-	byt, err := json.Marshal(projects)
+	p, err := goog.FetchProjects(ctx)
 	if err != nil {
 		panic(err)
 	}
-	_, err = fmt.Fprintf(f, "%s", byt)
-	if err != nil {
-		panic(err)
-	}
-
-	return nil
+	return goog.SaveProjects(ctx, filehelp.RelativePath(gcloudCacheFile), p)
 }
 
 func accessLog() error {
-	f, err := openAbsoluteFile(butlerlog, false)
-	if err != nil {
-		return err
-	}
-	fmt.Fprintf(f, "Butler called: %+v\n", os.Args)
-	f.Close()
-	return nil
+	buff := bytes.NewBuffer([]byte{})
+	fmt.Fprintf(buff, "Butler called: %+v\n", os.Args)
+	return ioutil.WriteFile(filehelp.RelativePath(butlerlog), buff.Bytes(), os.ModeAppend)
 }
 
-func getProgramDir() string {
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+func printProjects(filterArgs []string) {
+	projects, err := goog.ListProjects(filehelp.RelativePath(gcloudCacheFile))
 	if err != nil {
 		panic(err)
 	}
-	return dir
-}
-
-func readFile(filename string) ([]byte, error) {
-	dir := getProgramDir()
-	fullPath := fmt.Sprintf("%s/%s", dir, filename)
-	return ioutil.ReadFile(fullPath)
-}
-
-func openAbsoluteFile(filename string, truncate bool) (*os.File, error) {
-	dir := getProgramDir()
-	mode := os.O_APPEND | os.O_RDWR | os.O_CREATE
-	if truncate {
-		mode = mode | os.O_TRUNC
-	}
-	return os.OpenFile(fmt.Sprintf("%s/%s", dir, filename), mode, 0660)
-}
-
-func printRefreshMessage() {
-	fmt.Fprintf(os.Stdout, `
-		<?xml version="1.0"?>
-		<items>
-			<item uid="example" arg="NOTHING" valid="YES" autocomplete="example" type="file">
-			<title>Run: "g-refresh"</title>
-			</item>
-		</items>
-		`)
-}
-
-func printProjects(filterStr string) {
-	projects := filter(filterStr)
+	projects = filter(projects, filterArgs)
 	if len(projects) == 0 {
-		printRefreshMessage()
+		fmt.Fprint(os.Stdout, alfred.RefreshMsgXML)
 		return
 	}
-	items := items{projects}
+	items := alfred.ProjectToAlfredModel(projects...)
 	b, err := xml.Marshal(items)
 	if err != nil {
 		panic(err)
@@ -159,7 +69,6 @@ func printProjects(filterStr string) {
 }
 
 func main() {
-
 	// Log queried data in .butlerlog for debug purposes
 	if os.Getenv("DEBUG") != "" {
 		accessLog()
@@ -168,13 +77,14 @@ func main() {
 	args := os.Args[1:]
 	switch args[0] {
 	case "filter":
-		printProjects(strings.Join(args[1:], " "))
+		printProjects(args[1:])
 	case "refresh":
 		err := refresh()
 		if err != nil {
 			panic(err)
 		}
 	default:
+		fmt.Fprint(os.Stdout, alfred.InvalidCmdXML)
 		panic(fmt.Errorf("Unknown command"))
 	}
 }

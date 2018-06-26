@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>it.fosen.alfred.gcloud</string>
+	<string>io.github.jarlefosen.alfred-gcloud-shortcuts</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -81,7 +81,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Google Cloud</string>
+	<string>G: Google Cloud Shortcuts</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -112,7 +112,7 @@
 				<key>script</key>
 				<string>query=$1
 
-DEBUG=true ./butler filter "{query}"</string>
+DEBUG=true ./butler filter {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -162,7 +162,7 @@ DEBUG=true ./butler filter "{query}"</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"BigQuery","arg":"https:\/\/bigquery.cloud.google.com\/queries\/{var:project}","subtitle":"{var:project}"},{"title":"Dataflow","arg":"https:\/\/console.cloud.google.com\/dataflow?project={var:project}","subtitle":"{var:project}"},{"title":"Console","arg":"https:\/\/console.cloud.google.com\/home\/dashboard?project={var:project}","subtitle":"{var:project}"},{"title":"Logs","arg":"https:\/\/console.cloud.google.com\/logs\/viewer?project={var:project}","subtitle":"{var:project}"},{"title":"Storage","arg":"https:\/\/console.cloud.google.com\/storage\/browser?project={var:project}","subtitle":"{var:project}"},{"title":"PubSub","arg":"https:\/\/console.cloud.google.com\/cloudpubsub\/topicList?project={var:project}","subtitle":"{var:project}"},{"title":"StackDriver","arg":"https:\/\/app.google.stackdriver.com\/?project={var:project}","subtitle":"{var:project}"},{"title":"Container Engine - Kubernetes","arg":"https:\/\/console.cloud.google.com\/kubernetes\/list?project={var:project}","subtitle":"{var:project}"},{"title":"Cloud Functions","arg":"https:\/\/console.cloud.google.com\/functions\/list?project={var:project}","subtitle":"{var:project}"},{"title":"App Engine","arg":"https:\/\/console.cloud.google.com\/appengine?project={var:project}","subtitle":"{var:project}"},{"title":"Cron","arg":"https:\/\/console.cloud.google.com\/appengine\/taskqueues\/cron?project={var:project}&amp;tab=CRON","subtitle":"{var:project}"},{"title":"Compute Engine","arg":"https:\/\/console.cloud.google.com\/compute\/instances?project={var:project}","subtitle":"{var:project}"},{"title":"Quotas","arg":"https:\/\/console.cloud.google.com\/iam-admin\/quotas?project={var:project}","subtitle":"{var:project}"},{"title":"IAM &amp; admin","arg":"https:\/\/console.cloud.google.com\/iam-admin\/iam\/project?project={var:project}","subtitle":"{var:project}"}]</string>
+				<string>[{"title":"BigQuery","arg":"https:\/\/bigquery.cloud.google.com\/queries\/{var:project}","subtitle":"{var:project}"},{"title":"Dataflow","arg":"https:\/\/console.cloud.google.com\/dataflow?project={var:project}","subtitle":"{var:project}"},{"title":"Console","arg":"https:\/\/console.cloud.google.com\/home\/dashboard?project={var:project}","subtitle":"{var:project}"},{"title":"Logs","arg":"https:\/\/console.cloud.google.com\/logs\/viewer?project={var:project}","subtitle":"{var:project}"},{"title":"Storage","arg":"https:\/\/console.cloud.google.com\/storage\/browser?project={var:project}","subtitle":"{var:project}"},{"title":"PubSub","arg":"https:\/\/console.cloud.google.com\/cloudpubsub\/topicList?project={var:project}","subtitle":"{var:project}"},{"title":"StackDriver","arg":"https:\/\/app.google.stackdriver.com\/?project={var:project}","subtitle":"{var:project}"},{"title":"Kubernetes Engine","arg":"https:\/\/console.cloud.google.com\/kubernetes\/list?project={var:project}","subtitle":"{var:project}"},{"title":"Cloud Functions","arg":"https:\/\/console.cloud.google.com\/functions\/list?project={var:project}","subtitle":"{var:project}"},{"title":"App Engine","arg":"https:\/\/console.cloud.google.com\/appengine?project={var:project}","subtitle":"{var:project}"},{"title":"Task queues Cron","arg":"https:\/\/console.cloud.google.com\/appengine\/taskqueues\/cron?project={var:project}&amp;tab=CRON","subtitle":"{var:project}"},{"title":"Compute Engine","arg":"https:\/\/console.cloud.google.com\/compute\/instances?project={var:project}","subtitle":"{var:project}"},{"title":"Quotas","arg":"https:\/\/console.cloud.google.com\/iam-admin\/quotas?project={var:project}","subtitle":"{var:project}"},{"title":"IAM &amp; admin","arg":"https:\/\/console.cloud.google.com\/iam-admin\/iam\/project?project={var:project}","subtitle":"{var:project}"}]</string>
 				<key>keyword</key>
 				<string>product</string>
 				<key>runningsubtext</key>
@@ -251,9 +251,9 @@ DEBUG=true ./butler filter "{query}"</string>
 				<key>keyword</key>
 				<string>g-refresh</string>
 				<key>subtext</key>
-				<string>Update list of known google cloud projects</string>
+				<string>Update projects list</string>
 				<key>text</key>
-				<string>Refresh projects list</string>
+				<string>g-refresh</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
