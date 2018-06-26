@@ -1,1 +1,1 @@
-go build -o butler gcloud-butler/main.go
+GOOS=darwin GOARCH=amd64 go build -o butler-darwin gcloud-butler/main.go

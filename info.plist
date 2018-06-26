@@ -112,7 +112,7 @@
 				<key>script</key>
 				<string>query=$1
 
-DEBUG=true ./butler filter {query}</string>
+DEBUG=true ./butler-darwin filter {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -228,7 +228,7 @@ DEBUG=true ./butler filter {query}</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./butler refresh</string>
+				<string>./butler-darwin refresh</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
