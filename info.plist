@@ -162,7 +162,7 @@ DEBUG=false ./bin/butler-darwin filter {query}</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"BigQuery","arg":"https:\/\/console.cloud.google.com\/bigquery?project={var:project}","subtitle":"{var:project}"},{"title":"Dataflow","arg":"https:\/\/console.cloud.google.com\/dataflow?project={var:project}","subtitle":"{var:project}"},{"title":"Console","arg":"https:\/\/console.cloud.google.com\/home\/dashboard?project={var:project}","subtitle":"{var:project}"},{"title":"Logs","arg":"https:\/\/console.cloud.google.com\/logs\/viewer?project={var:project}","subtitle":"{var:project}"},{"title":"Storage","arg":"https:\/\/console.cloud.google.com\/storage\/browser?project={var:project}","subtitle":"{var:project}"},{"title":"PubSub","arg":"https:\/\/console.cloud.google.com\/cloudpubsub\/topicList?project={var:project}","subtitle":"{var:project}"},{"title":"StackDriver","arg":"https:\/\/app.google.stackdriver.com\/?project={var:project}","subtitle":"{var:project}"},{"title":"Kubernetes Engine","arg":"https:\/\/console.cloud.google.com\/kubernetes\/list?project={var:project}","subtitle":"{var:project}"},{"title":"Cloud Functions","arg":"https:\/\/console.cloud.google.com\/functions\/list?project={var:project}","subtitle":"{var:project}"},{"title":"App Engine","arg":"https:\/\/console.cloud.google.com\/appengine?project={var:project}","subtitle":"{var:project}"},{"title":"Task queues Cron","arg":"https:\/\/console.cloud.google.com\/appengine\/taskqueues\/cron?project={var:project}&amp;tab=CRON","subtitle":"{var:project}"},{"title":"Compute Engine","arg":"https:\/\/console.cloud.google.com\/compute\/instances?project={var:project}","subtitle":"{var:project}"},{"title":"Quotas","arg":"https:\/\/console.cloud.google.com\/iam-admin\/quotas?project={var:project}","subtitle":"{var:project}"},{"title":"IAM &amp; admin","arg":"https:\/\/console.cloud.google.com\/iam-admin\/iam\/project?project={var:project}","subtitle":"{var:project}"}]</string>
+				<string>[{"title":"BigQuery","arg":"https:\/\/console.cloud.google.com\/bigquery?project={var:project}","subtitle":"{var:project}"},{"title":"Dataflow","arg":"https:\/\/console.cloud.google.com\/dataflow?project={var:project}","subtitle":"{var:project}"},{"title":"Console","arg":"https:\/\/console.cloud.google.com\/home\/dashboard?project={var:project}","subtitle":"{var:project}"},{"title":"Logs","arg":"https:\/\/console.cloud.google.com\/logs\/viewer?project={var:project}","subtitle":"{var:project}"},{"title":"Storage","arg":"https:\/\/console.cloud.google.com\/storage\/browser?project={var:project}","subtitle":"{var:project}"},{"title":"PubSub","arg":"https:\/\/console.cloud.google.com\/cloudpubsub\/topicList?project={var:project}","subtitle":"{var:project}"},{"title":"StackDriver","arg":"https:\/\/app.google.stackdriver.com\/?project={var:project}","subtitle":"{var:project}"},{"title":"Kubernetes Engine","arg":"https:\/\/console.cloud.google.com\/kubernetes\/list?project={var:project}","subtitle":"{var:project}"},{"title":"Cloud Functions","arg":"https:\/\/console.cloud.google.com\/functions\/list?project={var:project}","subtitle":"{var:project}"},{"title":"App Engine","arg":"https:\/\/console.cloud.google.com\/appengine?project={var:project}","subtitle":"{var:project}"},{"title":"Task queues Cron","arg":"https:\/\/console.cloud.google.com\/appengine\/taskqueues\/cron?project={var:project}&amp;tab=CRON","subtitle":"{var:project}"},{"title":"Compute Engine","arg":"https:\/\/console.cloud.google.com\/compute\/instances?project={var:project}","subtitle":"{var:project}"},{"title":"Quotas","arg":"https:\/\/console.cloud.google.com\/iam-admin\/quotas?project={var:project}","subtitle":"{var:project}"},{"title":"IAM &amp; admin","arg":"https:\/\/console.cloud.google.com\/iam-admin\/iam\/project?project={var:project}","subtitle":"{var:project}"},{"title":"Credentials","arg":"https:\/\/console.cloud.google.com\/apis\/credentials?project={var:project}","subtitle":"{var:project}"},{"title":"Firebase Console","arg":"https:\/\/console.firebase.google.com\/u\/0\/project\/{var:project}\/overview","subtitle":"{var:project}"},{"title":"BigQuery Legacy","arg":"https:\/\/bigquery.cloud.google.com\/welcome\/{var:project}","subtitle":"{var:project}"},{"title":"Storage Transfer","arg":"https:\/\/console.cloud.google.com\/storage\/transfer?project={var:project}","subtitle":"{var:project}"},{"title":"Stackdriver Profiler","arg":"https:\/\/console.cloud.google.com\/profiler\/_\/cpu?project={var:project}","subtitle":"{var:project}"}]</string>
 				<key>keyword</key>
 				<string>product</string>
 				<key>runningsubtext</key>
@@ -209,7 +209,7 @@ DEBUG=false ./bin/butler-darwin filter {query}</string>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>We have updated the list of gcloud projects</string>
+				<string>{query}</string>
 				<key>title</key>
 				<string>Refresh done</string>
 			</dict>
@@ -228,7 +228,13 @@ DEBUG=false ./bin/butler-darwin filter {query}</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/butler-darwin refresh</string>
+				<string>./butler-darwin refresh &gt; /dev/null
+res=$?
+if [ $res == 0 ]; then
+  echo "Projects are updated"
+else
+  echo "Something went wrong"
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
