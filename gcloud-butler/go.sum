@@ -1,0 +1,12 @@
+cloud.google.com/go v0.24.0 h1:dXbX9JusOVTZ7hxXPTN2SMJzIzO/IT8kbnWlXiSrDRI=
+cloud.google.com/go v0.24.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
+github.com/golang/protobuf v1.1.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
+github.com/pkg/errors v0.8.0 h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=
+github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+golang.org/x/net v0.0.0-20180621144259-afe8f62b1d6b h1:VgWwPFFrh6LyvObbug7TZtI8EX5zwx7WsS6Y4Bqezqo=
+golang.org/x/net v0.0.0-20180621144259-afe8f62b1d6b/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
+golang.org/x/oauth2 v0.0.0-20180620175406-ef147856a6dd h1:QQhib242ErYDSMitlBm8V7wYCm/1a25hV8qMadIKLPA=
+golang.org/x/oauth2 v0.0.0-20180620175406-ef147856a6dd/go.mod h1:N/0e6XlmueqKjAGxoOufVs8QHGRruUQn6yWY3a++T0U=
+google.golang.org/api v0.0.0-20180621000839-3639d6d93f37 h1:fkOhvsEBgxuPpk3OSIVT1vGFQk06+suI7mxkauwiCzU=
+google.golang.org/api v0.0.0-20180621000839-3639d6d93f37/go.mod h1:4mhQ8q/RsB7i+udVvVy5NUi08OU8ZlA0gRVgrF7VFY0=
+google.golang.org/appengine v1.1.0/go.mod h1:EbEs0AVv82hx2wNQdGPgUI5lhzA/G0D9YwlJXL52JkM=

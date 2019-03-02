@@ -228,7 +228,7 @@ DEBUG=false ./bin/butler-darwin filter {query}</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./butler-darwin refresh &gt; /dev/null
+				<string>./bin/butler-darwin refresh &gt; /dev/null
 res=$?
 if [ $res == 0 ]; then
   echo "Projects are updated"
