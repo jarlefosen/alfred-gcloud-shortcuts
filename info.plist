@@ -81,7 +81,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>G: Google Cloud Shortcuts</string>
+	<string>Google Cloud Shortcuts</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -112,7 +112,7 @@
 				<key>script</key>
 				<string>query=$1
 
-DEBUG=false ./bin/butler-darwin filter {query}</string>
+./bin/butler-darwin filter {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -272,7 +272,7 @@ fi</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Shortcuts to known GCP products</string>
 	<key>uidata</key>
 	<dict>
 		<key>0BE312EA-B4AA-4CF2-82C7-65A85BEAAAE5</key>
@@ -325,7 +325,9 @@ fi</string>
 			<integer>140</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>1.0.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/jarlefosen/alfred-gcloud-shortcuts</string>
 </dict>
 </plist>
