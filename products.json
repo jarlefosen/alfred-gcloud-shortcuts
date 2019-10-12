@@ -1,0 +1,78 @@
+[
+  {
+    "name": "BigQuery",
+    "url": "https://console.cloud.google.com/bigquery?project={{.ProjectID}}"
+  },
+  {
+    "name": "Dataflow",
+    "url": "https://console.cloud.google.com/dataflow?project={{.ProjectID}}"
+  },
+  {
+    "name": "Console",
+    "url": "https://console.cloud.google.com/home/dashboard?project={{.ProjectID}}"
+  },
+  {
+    "name": "Logs",
+    "url": "https://console.cloud.google.com/logs/viewer?project={{.ProjectID}}"
+  },
+  {
+    "name": "Storage",
+    "url": "https://console.cloud.google.com/storage/browser?project={{.ProjectID}}"
+  },
+  {
+    "name": "PubSub",
+    "url": "https://console.cloud.google.com/cloudpubsub/topicList?project={{.ProjectID}}"
+  },
+  {
+    "name": "StackDriver",
+    "url": "https://app.google.stackdriver.com/?project={{.ProjectID}}"
+  },
+  {
+    "name": "Kubernetes Engine",
+    "url": "https://console.cloud.google.com/kubernetes/list?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud Functions",
+    "url": "https://console.cloud.google.com/functions/list?project={{.ProjectID}}"
+  },
+  {
+    "name": "App Engine",
+    "url": "https://console.cloud.google.com/appengine?project={{.ProjectID}}"
+  },
+  {
+    "name": "Task queues Cron",
+    "url": "https://console.cloud.google.com/appengine/taskqueues/cron?project={{.ProjectID}}&tab=CRON"
+  },
+  {
+    "name": "Compute Engine",
+    "url": "https://console.cloud.google.com/compute/instances?project={{.ProjectID}}"
+  },
+  {
+    "name": "Quotas",
+    "url": "https://console.cloud.google.com/iam-admin/quotas?project={{.ProjectID}}"
+  },
+  {
+    "name": "IAM & admin",
+    "url": "https://console.cloud.google.com/iam-admin/iam/project?project={{.ProjectID}}"
+  },
+  {
+    "name": "Credentials",
+    "url": "https://console.cloud.google.com/apis/credentials?project={{.ProjectID}}"
+  },
+  {
+    "name": "Firebase Console",
+    "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/overview"
+  },
+  {
+    "name": "BigQuery Legacy",
+    "url": "https://bigquery.cloud.google.com/welcome/{{.ProjectID}}"
+  },
+  {
+    "name": "Storage Transfer",
+    "url": "https://console.cloud.google.com/storage/transfer?project={{.ProjectID}}"
+  },
+  {
+    "name": "Stackdriver Profiler",
+    "url": "https://console.cloud.google.com/profiler/_/cpu?project={{.ProjectID}}"
+  }
+]

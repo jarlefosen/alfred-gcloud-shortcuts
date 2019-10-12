@@ -8,11 +8,11 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>0BE312EA-B4AA-4CF2-82C7-65A85BEAAAE5</key>
+		<key>38863873-18DD-4920-A28E-1B8A1AF85CE8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>285FC24B-C9EF-4719-A3BB-90C871B43E29</string>
+				<string>5C099F2A-5444-49DA-A2C1-0C4499D6F899</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -47,11 +47,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>ADF0B6D7-496F-469C-80AC-7CCD7654AA42</key>
+		<key>5C099F2A-5444-49DA-A2C1-0C4499D6F899</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C35D88A8-90F8-48D0-B08E-E2D2D308AC5A</string>
+				<string>ABA0DF5B-E3B5-4CB5-9D4B-66FE30AF879D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -60,11 +60,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>C35D88A8-90F8-48D0-B08E-E2D2D308AC5A</key>
+		<key>ABA0DF5B-E3B5-4CB5-9D4B-66FE30AF879D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0BE312EA-B4AA-4CF2-82C7-65A85BEAAAE5</string>
+				<string>F34201E5-52DD-45C8-9E1A-828DEFB2A724</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -90,21 +90,21 @@
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
-				<integer>2</integer>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>keyword</key>
-				<string>g</string>
 				<key>queuedelaycustom</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<true/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
@@ -112,11 +112,11 @@
 				<key>script</key>
 				<string>query=$1
 
-./bin/butler-darwin filter {query}</string>
+./bin/products -query "${query}" -project "${project}"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>./bin/products</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -129,9 +129,9 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>ADF0B6D7-496F-469C-80AC-7CCD7654AA42</string>
+			<string>ABA0DF5B-E3B5-4CB5-9D4B-66FE30AF879D</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -141,45 +141,67 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>{query}</string>
+				<string></string>
 				<key>utf8</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>285FC24B-C9EF-4719-A3BB-90C871B43E29</string>
+			<string>F34201E5-52DD-45C8-9E1A-828DEFB2A724</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"BigQuery","arg":"https:\/\/console.cloud.google.com\/bigquery?project={var:project}","subtitle":"{var:project}"},{"title":"Dataflow","arg":"https:\/\/console.cloud.google.com\/dataflow?project={var:project}","subtitle":"{var:project}"},{"title":"Console","arg":"https:\/\/console.cloud.google.com\/home\/dashboard?project={var:project}","subtitle":"{var:project}"},{"title":"Logs","arg":"https:\/\/console.cloud.google.com\/logs\/viewer?project={var:project}","subtitle":"{var:project}"},{"title":"Storage","arg":"https:\/\/console.cloud.google.com\/storage\/browser?project={var:project}","subtitle":"{var:project}"},{"title":"PubSub","arg":"https:\/\/console.cloud.google.com\/cloudpubsub\/topicList?project={var:project}","subtitle":"{var:project}"},{"title":"StackDriver","arg":"https:\/\/app.google.stackdriver.com\/?project={var:project}","subtitle":"{var:project}"},{"title":"Kubernetes Engine","arg":"https:\/\/console.cloud.google.com\/kubernetes\/list?project={var:project}","subtitle":"{var:project}"},{"title":"Cloud Functions","arg":"https:\/\/console.cloud.google.com\/functions\/list?project={var:project}","subtitle":"{var:project}"},{"title":"App Engine","arg":"https:\/\/console.cloud.google.com\/appengine?project={var:project}","subtitle":"{var:project}"},{"title":"Task queues Cron","arg":"https:\/\/console.cloud.google.com\/appengine\/taskqueues\/cron?project={var:project}&amp;tab=CRON","subtitle":"{var:project}"},{"title":"Compute Engine","arg":"https:\/\/console.cloud.google.com\/compute\/instances?project={var:project}","subtitle":"{var:project}"},{"title":"Quotas","arg":"https:\/\/console.cloud.google.com\/iam-admin\/quotas?project={var:project}","subtitle":"{var:project}"},{"title":"IAM &amp; admin","arg":"https:\/\/console.cloud.google.com\/iam-admin\/iam\/project?project={var:project}","subtitle":"{var:project}"},{"title":"Credentials","arg":"https:\/\/console.cloud.google.com\/apis\/credentials?project={var:project}","subtitle":"{var:project}"},{"title":"Firebase Console","arg":"https:\/\/console.firebase.google.com\/u\/0\/project\/{var:project}\/overview","subtitle":"{var:project}"},{"title":"BigQuery Legacy","arg":"https:\/\/bigquery.cloud.google.com\/welcome\/{var:project}","subtitle":"{var:project}"},{"title":"Storage Transfer","arg":"https:\/\/console.cloud.google.com\/storage\/transfer?project={var:project}","subtitle":"{var:project}"},{"title":"Stackdriver Profiler","arg":"https:\/\/console.cloud.google.com\/profiler\/_\/cpu?project={var:project}","subtitle":"{var:project}"}]</string>
+				<key>escaping</key>
+				<integer>102</integer>
 				<key>keyword</key>
-				<string>product</string>
+				<string>{var:hotkey}</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string></string>
+				<key>script</key>
+				<string>query=$1
+
+./bin/projects "${query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>./bin/projects</string>
 				<key>subtext</key>
-				<string>Choose a Google product</string>
+				<string></string>
 				<key>title</key>
 				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>0BE312EA-B4AA-4CF2-82C7-65A85BEAAAE5</string>
+			<string>38863873-18DD-4920-A28E-1B8A1AF85CE8</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -195,7 +217,7 @@
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>C35D88A8-90F8-48D0-B08E-E2D2D308AC5A</string>
+			<string>5C099F2A-5444-49DA-A2C1-0C4499D6F899</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -205,7 +227,7 @@
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
@@ -228,12 +250,12 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/butler-darwin refresh &gt; /dev/null
+				<string>./bin/projects -refresh &gt; /dev/null
 res=$?
-if [ $res == 0 ]; then
-  echo "Projects are updated"
+if [ $res -eq "0" ]; then
+	echo "Refresh success"
 else
-  echo "Something went wrong"
+	echo "Something failed"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -255,11 +277,11 @@ fi</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>g-refresh</string>
+				<string>{var:hotkey}-refresh</string>
 				<key>subtext</key>
 				<string>Update projects list</string>
 				<key>text</key>
-				<string>g-refresh</string>
+				<string>Refresh Google projects</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -272,22 +294,20 @@ fi</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Shortcuts to known GCP products</string>
+	<string>Shortcuts to known GCP products.
+
+Default hotkey for using is `g &lt;query&gt;`.
+
+First-time use:
+Run `g-refresh` which will update the cache of projects</string>
 	<key>uidata</key>
 	<dict>
-		<key>0BE312EA-B4AA-4CF2-82C7-65A85BEAAAE5</key>
+		<key>38863873-18DD-4920-A28E-1B8A1AF85CE8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>380</integer>
+			<integer>120</integer>
 			<key>ypos</key>
-			<integer>110</integer>
-		</dict>
-		<key>285FC24B-C9EF-4719-A3BB-90C871B43E29</key>
-		<dict>
-			<key>xpos</key>
-			<integer>600</integer>
-			<key>ypos</key>
-			<integer>110</integer>
+			<integer>105</integer>
 		</dict>
 		<key>3A3B333D-2E97-4479-AF29-B31FCB5EAE9D</key>
 		<dict>
@@ -303,30 +323,42 @@ fi</string>
 			<key>ypos</key>
 			<integer>220</integer>
 		</dict>
+		<key>5C099F2A-5444-49DA-A2C1-0C4499D6F899</key>
+		<dict>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>135</integer>
+		</dict>
 		<key>6CDFE549-1B9C-4EA5-A024-18FE99C69199</key>
 		<dict>
 			<key>xpos</key>
-			<integer>600</integer>
+			<integer>580</integer>
 			<key>ypos</key>
 			<integer>220</integer>
 		</dict>
-		<key>ADF0B6D7-496F-469C-80AC-7CCD7654AA42</key>
+		<key>ABA0DF5B-E3B5-4CB5-9D4B-66FE30AF879D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>120</integer>
+			<integer>375</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>105</integer>
 		</dict>
-		<key>C35D88A8-90F8-48D0-B08E-E2D2D308AC5A</key>
+		<key>F34201E5-52DD-45C8-9E1A-828DEFB2A724</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>575</integer>
 			<key>ypos</key>
-			<integer>140</integer>
+			<integer>105</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>hotkey</key>
+		<string>g</string>
+	</dict>
 	<key>version</key>
-	<string>1.0.1</string>
+	<string>2.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/jarlefosen/alfred-gcloud-shortcuts</string>
 </dict>
