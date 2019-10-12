@@ -2,3 +2,4 @@
 .gcloud-projects
 vendor/
 build/
+bin/
