@@ -1,15 +1,15 @@
 
-BUILD_DIR := build
-WORKFLOW_FILE := $(BUILD_DIR)/alfred-gcloud-shortcuts.alfredworkflow
+TARGET_DIR := target
+WORKFLOW_FILE := $(TARGET_DIR)/alfred-gcloud-shortcuts.alfredworkflow
 
 
-build/:
-	mkdir build
+target/:
+	mkdir target
 
 clean:
-	@[ -d $(BUILD_DIR) ] && rm -r $(BUILD_DIR) || true
+	@[ -d $(TARGET_DIR) ] && rm -r $(TARGET_DIR) || true
 
-workflow: clean build/
+workflow: build clean target/
 	zip $(WORKFLOW_FILE) \
 	info.plist \
 	icon.png \
