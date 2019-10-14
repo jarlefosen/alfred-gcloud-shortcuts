@@ -74,5 +74,13 @@
   {
     "name": "Stackdriver Profiler",
     "url": "https://console.cloud.google.com/profiler/_/cpu?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud Run",
+    "url": "https://console.cloud.google.com/run?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud Build",
+    "url:" "https://console.cloud.google.com/cloud-build/builds?project={{.ProjectID}}"
   }
 ]
