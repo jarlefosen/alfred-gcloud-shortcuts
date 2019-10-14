@@ -81,6 +81,6 @@
   },
   {
     "name": "Cloud Build",
-    "url:" "https://console.cloud.google.com/cloud-build/builds?project={{.ProjectID}}"
+    "url": "https://console.cloud.google.com/cloud-build/builds?project={{.ProjectID}}"
   }
 ]
