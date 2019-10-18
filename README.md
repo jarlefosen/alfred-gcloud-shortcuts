@@ -2,7 +2,7 @@
 
 ## Download
 
-An exported workflow should be available under [releases](https://github.com/jarlefosen/alfred-gcloud-shortcuts/releases)
+An exported workflow should be available under [releases](https://github.com/jarlefosen/alfred-gcloud-shortcuts/releases) make sure you meet the [requirements](#requirements).
 
 ## Usage
 
@@ -22,9 +22,14 @@ Initially run `g-refresh` in Alfred to update the list of authenticated projects
 
 `g <project filter>` ↩️️ `BigQuery` ➡️ Opens BigQuery for the selected project.
 
-`g My Project` ↩️ `Kube` ➡️ Opens Kubernetes Engine in GCP for projet My Project.
+`g My Project` ↩️ `Kube` ➡️ Opens Kubernetes Engine in GCP for project My Project.
 
 ## Requirements
 
-The workflow requires that you have installed and authenticated with `gcloud`
-- https://cloud.google.com/sdk/
+```
+If you initialized gcloud recently, make sure to save the authentication locally, see below.
+```
+
+- installed and authenticated `gcloud` https://cloud.google.com/sdk/
+- coreutils `brew install coreutils`
+- save [auth locally](https://github.com/jarlefosen/alfred-gcloud-shortcuts/issues/5#issuecomment-537852834): `gcloud auth application-default login`
