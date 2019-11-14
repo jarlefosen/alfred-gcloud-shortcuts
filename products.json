@@ -82,5 +82,9 @@
   {
     "name": "Cloud Build",
     "url": "https://console.cloud.google.com/cloud-build/builds?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud Composer",
+    "url": "https://console.cloud.google.com/composer/environments?project={{.ProjectID}}"
   }
 ]
