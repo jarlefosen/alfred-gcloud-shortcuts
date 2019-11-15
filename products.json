@@ -4,6 +4,14 @@
     "url": "https://console.cloud.google.com/bigquery?project={{.ProjectID}}"
   },
   {
+    "name": "BigQuery Data Transfers",
+    "url": "https://console.cloud.google.com/bigquery/transfers?project={{.ProjectID}}"
+  },
+  {
+    "name": "BigQuery Scheduled Queries",
+    "url": "https://console.cloud.google.com/bigquery/scheduled-queries?project={{.ProjectID}}"
+  },
+  {
     "name": "Dataflow",
     "url": "https://console.cloud.google.com/dataflow?project={{.ProjectID}}"
   },
