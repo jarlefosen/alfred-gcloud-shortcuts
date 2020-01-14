@@ -33,6 +33,10 @@
   },
   {
     "name": "StackDriver",
+    "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
+  },
+  {
+    "name": "StackDriver Legacy",
     "url": "https://app.google.stackdriver.com/?project={{.ProjectID}}"
   },
   {
