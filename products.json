@@ -36,6 +36,10 @@
     "url": "https://console.cloud.google.com/run?project={{.ProjectID}}"
   },
   {
+    "name": "Cloud SQL",
+    "url": "https://console.cloud.google.com/sql?project={{.ProjectID}}"
+  },
+  {
     "name": "Compute Engine",
     "url": "https://console.cloud.google.com/compute/instances?project={{.ProjectID}}"
   },
