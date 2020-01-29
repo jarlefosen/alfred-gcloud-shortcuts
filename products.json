@@ -20,6 +20,14 @@
     "url": "https://console.cloud.google.com/bigquery/scheduled-queries?project={{.ProjectID}}"
   },
   {
+    "name": "Bigtable",
+    "url": "https://console.cloud.google.com/bigtable?project={{.ProjectID}}"
+  },
+  {
+    "name": "Billing",
+    "url": "https://console.cloud.google.com/billing?project={{.ProjectID}}"
+  },
+  {
     "name": "Cloud Build",
     "url": "https://console.cloud.google.com/cloud-build/builds?project={{.ProjectID}}"
   },
@@ -40,6 +48,10 @@
     "url": "https://console.cloud.google.com/sql?project={{.ProjectID}}"
   },
   {
+    "name": "Cloud Tasks",
+    "url": "https://console.cloud.google.com/cloudtasks?project={{.ProjectID}}"
+  },
+  {
     "name": "Compute Engine",
     "url": "https://console.cloud.google.com/compute/instances?project={{.ProjectID}}"
   },
@@ -56,12 +68,44 @@
     "url": "https://console.cloud.google.com/dataflow?project={{.ProjectID}}"
   },
   {
+    "name": "Datastore",
+    "url": "https://console.cloud.google.com/datastore?project={{.ProjectID}}"
+  },
+  {
+    "name": "Endpoints",
+    "url": "https://console.cloud.google.com/endpoints?project={{.ProjectID}}"
+  },
+  {
+    "name": "Firebase Authentication Users",
+    "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/authentication/users"
+  },
+  {
     "name": "Firebase Console",
     "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/overview"
   },
   {
+    "name": "Firebase Functions",
+    "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/functions"
+  },
+  {
+    "name": "Firebase Hosting",
+    "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/hosting"
+  },
+  {
+    "name": "Firebase ML Kit",
+    "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/ml"
+  },
+  {
+    "name": "Firebase Storage",
+    "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/storage"
+  },
+  {
     "name": "IAM & admin",
     "url": "https://console.cloud.google.com/iam-admin/iam/project?project={{.ProjectID}}"
+  },
+  {
+    "name": "KMS",
+    "url": "https://console.cloud.google.com/security/kms?project={{.ProjectID}}"
   },
   {
     "name": "Kubernetes Engine",
