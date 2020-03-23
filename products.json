@@ -64,6 +64,10 @@
     "url": "https://console.cloud.google.com/home/dashboard?project={{.ProjectID}}"
   },
   {
+    "name": "Container Registry",
+    "url": "https://console.cloud.google.com/gcr/images/{{.ProjectID}}?project={{.ProjectID}}"
+  }
+  {
     "name": "Credentials",
     "url": "https://console.cloud.google.com/apis/credentials?project={{.ProjectID}}"
   },
