@@ -112,6 +112,10 @@
     "url": "https://console.cloud.google.com/iam-admin/iam/project?project={{.ProjectID}}"
   },
   {
+    "name": "Instance Groups",
+    "url": "https://console.cloud.google.com/compute/instanceGroups/list?project={{.ProjectID}}"
+  },
+  {
     "name": "KMS",
     "url": "https://console.cloud.google.com/security/kms?project={{.ProjectID}}"
   },
