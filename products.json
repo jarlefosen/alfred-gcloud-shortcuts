@@ -156,11 +156,15 @@
     "url": "https://console.cloud.google.com/storage/browser?project={{.ProjectID}}"
   },
   {
-    "name": "Storage Transfer",
-    "url": "https://console.cloud.google.com/storage/transfer?project={{.ProjectID}}"
-  },
-  {
     "name": "Task queues Cron",
     "url": "https://console.cloud.google.com/appengine/taskqueues/cron?project={{.ProjectID}}&tab=CRON"
+  },
+  {
+    "name": "Transfer Service Cloud",
+    "url": "https://console.cloud.google.com/transfer/cloud?project={{.ProjectID}}"
+  },
+  {
+    "name": "Transfer Service On-Premise",
+    "url": "https://console.cloud.google.com/transfer/on-premises/jobs?project={{.ProjectID}}"
   }
 ]
