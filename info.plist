@@ -136,25 +136,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>F34201E5-52DD-45C8-9E1A-828DEFB2A724</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -202,6 +183,25 @@
 			<string>38863873-18DD-4920-A28E-1B8A1AF85CE8</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F34201E5-52DD-45C8-9E1A-828DEFB2A724</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -354,9 +354,15 @@ Run `g-refresh` which will update the cache of projects</string>
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>authuser</key>
+		<string></string>
 		<key>hotkey</key>
 		<string>g</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>authuser</string>
+	</array>
 	<key>version</key>
 	<string>2.0.5</string>
 	<key>webaddress</key>
