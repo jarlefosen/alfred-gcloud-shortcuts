@@ -18,9 +18,9 @@ workflow: build clean target/
 	bin/projects
 
 build-projects:
-	GOOS=darwin GOARCH=amd64 go build -ldflags='-s -w' -o bin/projects cmd/projects/*.go
+	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -ldflags='-s -w' -trimpath -o bin/projects cmd/projects/*.go
 
 build-products:
-	GOOS=darwin GOARCH=amd64 go build -ldflags='-s -w' -o bin/products cmd/products/*.go
+	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -ldflags='-s -w' -trimpath -o bin/products cmd/products/*.go
 
 build: build-projects build-products

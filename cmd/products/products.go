@@ -6,6 +6,7 @@ import (
 	"flag"
 	"io/ioutil"
 	"log"
+	"net/url"
 	"os"
 	"text/template"
 
@@ -45,29 +46,6 @@ type urlTemplate struct {
 	ProjectID string
 }
 
-var productTemplates = []ProductTemplate{
-	{
-		Name: "BigQuery",
-		URL:  "https://console.cloud.google.com/bigquery?project={{.ProjectID}}",
-	},
-	{
-		Name: "Dataflow",
-		URL:  "https://console.cloud.google.com/dataflow?project={{.ProjectID}}",
-	},
-	{
-		Name: "Console",
-		URL:  "https://console.cloud.google.com/home/dashboard?project={{.ProjectID}}",
-	},
-	{
-		Name: "Logs",
-		URL:  "https://console.cloud.google.com/logs/viewer?project={{.ProjectID}}",
-	},
-	{
-		Name: "Storage",
-		URL:  "https://console.cloud.google.com/storage/browser?project={{.ProjectID}}",
-	},
-}
-
 func readProducts() ([]ProductTemplate, error) {
 	f, err := os.Open("./products.json")
 	if err != nil {
@@ -97,6 +75,11 @@ func run() {
 		wf.FatalError(err)
 		return
 	}
+
+	queryParams := map[string]string{
+		"authuser": wf.Config.Get("authuser"),
+	}
+
 	for _, p := range products {
 		urlTemplate, err := template.New("").Parse(p.URL)
 		if err != nil {
@@ -106,12 +89,14 @@ func run() {
 		if err := urlTemplate.Execute(buf, templateArgs); err != nil {
 			wf.FatalError(err)
 		}
-		parsedURLBytes, err := ioutil.ReadAll(buf)
+		urlBytes, err := ioutil.ReadAll(buf)
 		if err != nil {
 			wf.FatalError(err)
+			return
 		}
-		parsedURL := string(parsedURLBytes)
-		wf.NewItem(p.Name).Arg(parsedURL).Subtitle(project).UID(parsedURL).Valid(true)
+
+		generatedURL := appendURLParameters(string(urlBytes), queryParams)
+		wf.NewItem(p.Name).Arg(generatedURL).Subtitle(project).UID(string(urlBytes)).Valid(true)
 	}
 
 	if query != "" {
@@ -119,6 +104,23 @@ func run() {
 	}
 
 	wf.SendFeedback()
+}
+
+func appendURLParameters(urlString string, keyval map[string]string) string {
+	u, err := url.ParseRequestURI(urlString)
+	if err != nil {
+		log.Printf("silently failed to parse url: %v", err)
+		return urlString
+	}
+	q := u.Query()
+	for key, val := range keyval {
+		if key == "" || val == "" {
+			continue
+		}
+		q.Add(key, val)
+	}
+	u.RawQuery = q.Encode()
+	return u.String()
 }
 
 func main() {

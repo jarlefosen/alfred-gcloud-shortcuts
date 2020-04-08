@@ -10,9 +10,6 @@ Commands:
 - `g <query>` for search
 - `g-refresh` for updating list of projects
 
-You are free to change the hotkey by editing the variable `hotkey` when importing the workflow.
-
-Changing the variable `hotkey` from `g` to `gcp` results in commands like `gcp <query>` and `gcp-refresh`.
 
 ### Refresh projects list
 
@@ -23,6 +20,16 @@ Initially run `g-refresh` in Alfred to update the list of authenticated projects
 `g <project filter>` ↩️️ `BigQuery` ➡️ Opens BigQuery for the selected project.
 
 `g My Project` ↩️ `Kube` ➡️ Opens Kubernetes Engine in GCP for project My Project.
+
+### Configuration
+
+**hotkey**
+
+Changing the variable `hotkey` from `g` to `gcp` results in commands like `gcp <query>` and `gcp-refresh`.
+
+**authuser**
+
+Specify the `authuser` query parameter in case you are logged into multiple Google accounts and you want to open links logged into a specific user.
 
 ## Requirements
 
