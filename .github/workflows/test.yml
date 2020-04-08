@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go
+      uses: actions/setup-go@v1
+      with:
+        go-version: '1.14'
+      id: go
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Validate JSON
+      run: |
+        cat products.json | jq '.' >> /dev/null
+
+    - name: go build
+      run:  make build
+
+    - name: go vet
+      run: go vet ./...
