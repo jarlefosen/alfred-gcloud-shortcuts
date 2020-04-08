@@ -18,7 +18,7 @@ jobs:
 
     - name: Validate JSON
       run: |
-        cat products.json | jq >> /dev/null
+        cat products.json | jq '.' >> /dev/null
 
     - name: go build
       run:  make build
