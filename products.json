@@ -128,6 +128,10 @@
     "url": "https://console.cloud.google.com/kubernetes/list?project={{.ProjectID}}"
   },
   {
+    "name": "Load Balancing",
+    "url": "https://console.cloud.google.com/net-services/loadbalancing/loadBalancers/list?project={{.ProjectID}}"
+  },
+  {
     "name": "Logs",
     "url": "https://console.cloud.google.com/logs/viewer?project={{.ProjectID}}"
   },
