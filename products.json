@@ -132,6 +132,10 @@
     "url": "https://console.cloud.google.com/logs/viewer?project={{.ProjectID}}"
   },
   {
+    "name": "Memorystore Redis",
+    "url": "https://console.cloud.google.com/memorystore/redis/instances?project={{.ProjectID}}"
+  },
+  {
     "name": "PubSub",
     "url": "https://console.cloud.google.com/cloudpubsub/topicList?project={{.ProjectID}}"
   },
