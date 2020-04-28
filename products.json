@@ -148,6 +148,10 @@
     "url": "https://console.cloud.google.com/iam-admin/quotas?project={{.ProjectID}}"
   },
   {
+    "name": "Service Accounts",
+    "url": "https://console.cloud.google.com/iam-admin/serviceaccounts?project={{.ProjectID}}"
+  },
+  {
     "name": "StackDriver",
     "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
   },
