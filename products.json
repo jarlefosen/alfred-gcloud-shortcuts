@@ -1,5 +1,13 @@
 [
   {
+    "name": "AI Platform Jobs",
+    "url": "https://console.cloud.google.com/ai-platform/jobs?project={{.ProjectID}}"
+  },
+  {
+    "name": "AI Platform Notebooks",
+    "url": "https://console.cloud.google.com/ai-platform/notebooks/instances?project={{.ProjectID}}"
+  },
+  {
     "name": "App Engine",
     "url": "https://console.cloud.google.com/appengine?project={{.ProjectID}}"
   },
