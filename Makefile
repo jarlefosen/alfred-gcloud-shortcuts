@@ -9,13 +9,16 @@ target/:
 clean:
 	@[ -d $(TARGET_DIR) ] && rm -r $(TARGET_DIR) || true
 
-workflow: build clean target/
+workflow: build zip-workflow
+
+zip-workflow: clean target/
 	zip $(WORKFLOW_FILE) \
 	info.plist \
 	icon.png \
 	products.json \
 	bin/products \
 	bin/projects
+
 
 build-projects:
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -ldflags='-s -w' -trimpath -o bin/projects cmd/projects/*.go
