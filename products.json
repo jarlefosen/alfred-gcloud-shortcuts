@@ -190,5 +190,17 @@
   {
     "name": "Transfer Service On-Premise",
     "url": "https://console.cloud.google.com/transfer/on-premises/jobs?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud DNS",
+    "url": "https://console.cloud.google.com/net-services/dns/zones?project={{.ProjectID}}"
+  },
+  {
+    "name": "Secret Manager",
+    "url": "https://console.cloud.google.com/security/secret-manager?project={{.ProjectID}}"
+  },
+  {
+    "name": "Artifact Registry",
+    "url": "https://console.cloud.google.com/artifacts?project={{.ProjectID}}"
   }
 ]
