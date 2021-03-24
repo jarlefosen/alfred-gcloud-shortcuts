@@ -160,6 +160,10 @@
     "url": "https://console.cloud.google.com/iam-admin/serviceaccounts?project={{.ProjectID}}"
   },
   {
+    "name": "Spanner",
+    "url": "https://console.cloud.google.com/spanner/instances?project={{.ProjectID}}"
+  },
+  {
     "name": "StackDriver",
     "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
   },
