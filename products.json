@@ -202,5 +202,9 @@
   {
     "name": "Artifact Registry",
     "url": "https://console.cloud.google.com/artifacts?project={{.ProjectID}}"
+  },
+  {
+    "name": "Monitoring",
+    "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
   }
 ]
