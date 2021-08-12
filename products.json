@@ -206,5 +206,9 @@
   {
     "name": "Monitoring",
     "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
+  },
+  {
+    "name": "VPC Networks",
+    "url": "https://console.cloud.google.com/networking/networks/list?project={{.ProjectID}}"
   }
 ]
