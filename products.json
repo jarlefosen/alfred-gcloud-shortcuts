@@ -120,6 +120,10 @@
     "url": "https://console.firebase.google.com/u/0/project/{{.ProjectID}}/storage"
   },
   {
+    "name": "Firestore",
+    "url": "https://console.cloud.google.com/firestore?project={{.ProjectID}}"
+  },
+  {
     "name": "IAM & admin",
     "url": "https://console.cloud.google.com/iam-admin/iam/project?project={{.ProjectID}}"
   },
