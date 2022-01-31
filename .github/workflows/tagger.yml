@@ -1,0 +1,21 @@
+# Manual workflow to create Git tags when away from the terminal.
+# Useful for starting release pipelines which are triggered based on tag creation.
+name: Guten Tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Input git tag'
+        required: true
+
+jobs:
+  tagger:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Create and push git tag
+      run: |
+        echo "Creating tag ${{ github.event.inputs.version }}"
+        git tag "${{ github.event.inputs.version }}"
+        git push origin "${{ github.event.inputs.version }}"
