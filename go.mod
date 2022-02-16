@@ -1,4 +1,4 @@
-module alfred-gcloud-shortcuts
+module github.com/jarlefosen/alfred-gcloud-shortcuts
 
 go 1.12
 
