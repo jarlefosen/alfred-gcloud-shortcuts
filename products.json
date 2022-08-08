@@ -214,5 +214,9 @@
   {
     "name": "VPC Networks",
     "url": "https://console.cloud.google.com/networking/networks/list?project={{.ProjectID}}"
+  },
+  {
+    "name": "AlloyDB for PostgreSQL",
+    "url": "https://console.cloud.google.com/alloydb/clusters?project={{.ProjectID}}"
   }
 ]
