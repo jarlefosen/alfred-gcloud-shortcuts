@@ -216,6 +216,10 @@
     "url": "https://console.cloud.google.com/networking/networks/list?project={{.ProjectID}}"
   },
   {
+    "name": "AlloyDB for PostgreSQL",
+    "url": "https://console.cloud.google.com/alloydb/clusters?project={{.ProjectID}}"
+  },
+  {
     "name": "Trace",
     "url": "https://console.cloud.google.com/traces/overview?project={{.ProjectID}}"
   }
