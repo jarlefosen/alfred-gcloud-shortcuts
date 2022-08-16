@@ -222,5 +222,9 @@
   {
     "name": "Trace",
     "url": "https://console.cloud.google.com/traces/overview?project={{.ProjectID}}"
+  },
+  {
+    "name": "Workflows",
+    "url": "https://console.cloud.google.com/workflows?project={{.ProjectID}}"
   }
 ]
