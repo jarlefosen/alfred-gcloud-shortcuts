@@ -92,6 +92,10 @@
     "url": "https://console.cloud.google.com/apis/credentials?project={{.ProjectID}}"
   },
   {
+    "name": "Dashboards",
+    "url": "https://console.cloud.google.com/monitoring/dashboards?project={{.ProjectID}}"
+  },
+  {
     "name": "Dataflow",
     "url": "https://console.cloud.google.com/dataflow?project={{.ProjectID}}"
   },
