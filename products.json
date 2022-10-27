@@ -8,8 +8,16 @@
     "url": "https://console.cloud.google.com/ai-platform/notebooks/instances?project={{.ProjectID}}"
   },
   {
+    "name": "AlloyDB for PostgreSQL",
+    "url": "https://console.cloud.google.com/alloydb/clusters?project={{.ProjectID}}"
+  },
+  {
     "name": "App Engine",
     "url": "https://console.cloud.google.com/appengine?project={{.ProjectID}}"
+  },
+  {
+    "name": "Artifact Registry",
+    "url": "https://console.cloud.google.com/artifacts?project={{.ProjectID}}"
   },
   {
     "name": "BigQuery",
@@ -44,6 +52,10 @@
     "url": "https://console.cloud.google.com/composer/environments?project={{.ProjectID}}"
   },
   {
+    "name": "Cloud DNS",
+    "url": "https://console.cloud.google.com/net-services/dns/zones?project={{.ProjectID}}"
+  },
+  {
     "name": "Cloud Functions",
     "url": "https://console.cloud.google.com/functions/list?project={{.ProjectID}}"
   },
@@ -52,12 +64,12 @@
     "url": "https://console.cloud.google.com/run?project={{.ProjectID}}"
   },
   {
-    "name": "Cloud Scheduler",
-    "url": "https://console.cloud.google.com/cloudscheduler?project={{.ProjectID}}"
-  },
-  {
     "name": "Cloud SQL",
     "url": "https://console.cloud.google.com/sql?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud Scheduler",
+    "url": "https://console.cloud.google.com/cloudscheduler?project={{.ProjectID}}"
   },
   {
     "name": "Cloud Tasks",
@@ -152,12 +164,24 @@
     "url": "https://console.cloud.google.com/memorystore/redis/instances?project={{.ProjectID}}"
   },
   {
+    "name": "Metrics Explorer",
+    "url": "https://console.cloud.google.com/monitoring/metrics-explorer?project={{.ProjectID}}"
+  },
+  {
+    "name": "Monitoring",
+    "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
+  },
+  {
     "name": "PubSub",
     "url": "https://console.cloud.google.com/cloudpubsub/topicList?project={{.ProjectID}}"
   },
   {
     "name": "Quotas",
     "url": "https://console.cloud.google.com/iam-admin/quotas?project={{.ProjectID}}"
+  },
+  {
+    "name": "Secret Manager",
+    "url": "https://console.cloud.google.com/security/secret-manager?project={{.ProjectID}}"
   },
   {
     "name": "Service Accounts",
@@ -188,6 +212,10 @@
     "url": "https://console.cloud.google.com/appengine/taskqueues/cron?project={{.ProjectID}}&tab=CRON"
   },
   {
+    "name": "Trace",
+    "url": "https://console.cloud.google.com/traces/overview?project={{.ProjectID}}"
+  },
+  {
     "name": "Transfer Service Cloud",
     "url": "https://console.cloud.google.com/transfer/cloud?project={{.ProjectID}}"
   },
@@ -196,32 +224,8 @@
     "url": "https://console.cloud.google.com/transfer/on-premises/jobs?project={{.ProjectID}}"
   },
   {
-    "name": "Cloud DNS",
-    "url": "https://console.cloud.google.com/net-services/dns/zones?project={{.ProjectID}}"
-  },
-  {
-    "name": "Secret Manager",
-    "url": "https://console.cloud.google.com/security/secret-manager?project={{.ProjectID}}"
-  },
-  {
-    "name": "Artifact Registry",
-    "url": "https://console.cloud.google.com/artifacts?project={{.ProjectID}}"
-  },
-  {
-    "name": "Monitoring",
-    "url": "https://console.cloud.google.com/monitoring?project={{.ProjectID}}"
-  },
-  {
     "name": "VPC Networks",
     "url": "https://console.cloud.google.com/networking/networks/list?project={{.ProjectID}}"
-  },
-  {
-    "name": "AlloyDB for PostgreSQL",
-    "url": "https://console.cloud.google.com/alloydb/clusters?project={{.ProjectID}}"
-  },
-  {
-    "name": "Trace",
-    "url": "https://console.cloud.google.com/traces/overview?project={{.ProjectID}}"
   },
   {
     "name": "Workflows",

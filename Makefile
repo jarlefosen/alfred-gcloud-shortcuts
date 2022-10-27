@@ -24,3 +24,8 @@ build-products:
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -ldflags='-s -w' -trimpath -o bin/products cmd/products/*.go
 
 build: build-projects build-products
+
+sort-products:
+	cat products.json | jq -s '.[] | sort_by(.name)' > products_sorted.json
+	cp products_sorted.json products.json
+	rm products_sorted.json
