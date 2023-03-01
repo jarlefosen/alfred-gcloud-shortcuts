@@ -10,9 +10,8 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/deanishe/awgo/fuzzy"
-
 	aw "github.com/deanishe/awgo"
+	"go.deanishe.net/fuzzy"
 )
 
 var (

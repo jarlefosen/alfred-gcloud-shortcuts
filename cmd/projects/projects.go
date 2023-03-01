@@ -8,12 +8,10 @@ import (
 	"os"
 	"strings"
 
+	aw "github.com/deanishe/awgo"
+	"go.deanishe.net/fuzzy"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/cloudresourcemanager/v1"
-
-	"github.com/deanishe/awgo/fuzzy"
-
-	aw "github.com/deanishe/awgo"
 )
 
 const (
