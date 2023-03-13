@@ -234,5 +234,9 @@
   {
     "name": "Workflows",
     "url": "https://console.cloud.google.com/workflows?project={{.ProjectID}}"
+  },
+  {
+    "name": "Cloud Deploy",
+    "url": "https://console.cloud.google.com/deploy/delivery-pipelines?project={{.ProjectID}}"
   }
 ]
