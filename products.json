@@ -238,5 +238,9 @@
   {
     "name": "Cloud Deploy",
     "url": "https://console.cloud.google.com/deploy/delivery-pipelines?project={{.ProjectID}}"
+  },
+  {
+    "name": "Document AI",
+    "url": "https://console.cloud.google.com/ai/document-ai?project={{.ProjectID}}"
   }
 ]
