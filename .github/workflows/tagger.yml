@@ -13,11 +13,11 @@ jobs:
   tagger:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.TAG_TOKEN }}    
-    - name: Create and push git tag
-      run: |
-        echo "Creating tag ${{ github.event.inputs.version }}"
-        git tag "${{ github.event.inputs.version }}"
-        git push origin "${{ github.event.inputs.version }}"
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TAG_TOKEN }}
+      - name: Create and push git tag
+        run: |
+          echo "Creating tag ${{ github.event.inputs.version }}"
+          git tag "${{ github.event.inputs.version }}"
+          git push origin "${{ github.event.inputs.version }}"
